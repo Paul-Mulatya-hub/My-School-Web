@@ -1,0 +1,98 @@
+{% extends "base.html" %}  <!--implements whatever is in the base directory-->
+{% block tittle %}
+Home
+{% endblock %}
+
+
+
+<!--create a heading of the page
+create a bootstrap carousel with three images
+create a paragraph using loren with 60 words
+create a bootstrap jumbotron
+create a paragraph using lorem with 60 words-->
+
+{% block carousel %}
+
+<html lang="en">
+
+<body>
+
+  <!-- Page Heading -->
+  <header class="text-center my-4">
+    <h1 class="text-primary" >WELCOME TO HOMEPAGE</h1>
+  </header>
+
+  <!-- Bootstrap Carousel -->
+  <div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../static/images/img.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Young Mulatya warming up</h5>
+        <p>This was his first day awaiting his debut after club record transfer.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../../static/images/img_1.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Beautiful gal training</h5>
+        <p>Always a joy to see our students playing.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../../static/images/img_4.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Torres shooting</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+{% endblock %}
+
+{% block content2 %}
+  <!-- First Paragraph -->
+  <div class="container my-4">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus
+        euismod, faucibus purus non, lacinia justo. Cras scelerisque dolor vitae magna
+        efficitur, a laoreet magna facilisis. Donec auctor urna et erat ultrices, in sagittis augue commodo.</p>
+  </div>
+{% endblock %}
+
+{% block jumbotron %}
+  <!-- Jumbotron -->
+  <div class="jumbotron text-primary bg-gradient" id="jumbotron" >
+    <h2>Explore More with Us</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent imperdiet odio at neque vestibulum, et malesuada nulla viverra. Sed facilisis dui ut sapien sagittis, vel sollicitudin urna aliquet.</p>
+  </div>
+
+{% endblock %}
+
+
+{% block content %}
+  <!-- Second Paragraph -->
+  <div class="container">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id dolor et libero sodales volutpat. Integer ac tortor volutpat, lacinia orci vel, cursus quam. Duis id ex nibh. Nam dapibus libero nec lorem sagittis, nec laoreet sapien porta.</p>
+  </div>
+{% endblock %}
+
+</body>
+</html>
+
+
+
+
+

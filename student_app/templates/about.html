@@ -1,0 +1,117 @@
+{% extends "base.html" %}  <!--implements whatever is in the base directory-->
+{% load static %}
+
+
+{% block tittle %}
+About Us
+{% endblock %}
+
+{% block content %}
+
+  <!-- Page Heading -->
+  <header class="text-center my-4">
+    <h1>About Us</h1>
+    <p class="lead">Learn more about who we are and what we stand for.</p>
+  </header>
+
+  <!-- Intro Section -->
+  <section class="container my-5">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="../../static/images/img_7.png" class="img-fluid" alt="Principal" style="border-radius: 8px;">
+      </div>
+      <div class="col-md-6">
+        <h2>Our Story</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dictum egestas nulla, at gravida erat tempus sed. Vestibulum venenatis, lorem a consectetur euismod, risus magna mollis felis, id posuere risus dolor ut nisi.</p>
+        <p>Since our founding, we have worked to make a positive impact in our field. Through innovation, dedication, and a commitment to excellence, we strive to create meaningful solutions that address the real needs of our customers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Statement -->
+  <section class="jumbotron text-center bg-light">
+    <h2>Our Mission</h2>
+    <p class="lead">To provide exceptional services and solutions that empower our clients to succeed in their fields. We aim to make a difference by staying true to our core values of integrity, innovation, and customer satisfaction.</p>
+  </section>
+
+  <!-- Team Section -->
+  <section class="container my-5">
+    <h2 class="text-center">Meet Our Team</h2>
+    <div class="row text-center">
+      <div class="col-md-4 my-3">
+        <img src="../../static/images/img_4.png" class="rounded-circle img-fluid" alt="Team Member 1" style="width: 150px; height: 150px;">
+        <h4>Joan Muendo</h4>
+        <p>CEO & Founder</p>
+        <p class="text-muted">Joan has over 20 years of experience in the industry, leading the team with a vision for growth and success.</p>
+      </div>
+      <div class="col-md-4 my-3">
+        <img src="../../static/images/img_5.png" class="rounded-circle img-fluid" alt="Team Member 2" style="width: 150px; height: 150px;">
+        <h4>Muthui Titus</h4>
+        <p>Chief Operating Officer</p>
+        <p class="text-muted">Titus,alias kotiko ensures operational excellence, overseeing our strategic initiatives and day-to-day operations.</p>
+      </div>
+      <div class="col-md-4 my-3">
+        <img src="../../static/images/img_6.png" class="rounded-circle img-fluid" alt="Team Member 3" style="width: 150px; height: 150px;">
+        <h4>Mulatya Paul</h4>
+        <p>Head of Product Development</p>
+        <p class="text-muted">With a background in innovation, Paul leads our product development with a customer-focused approach.</p>
+      </div>
+    </div>
+  </section>
+
+
+<div class="btn btn-secondary">
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {{ message.tags }}">{{ message }}</div>
+
+        {% endfor %}
+
+    {% endif %}
+
+    <h2>STUDENT LIST</h2>
+    <table class=" table table-bordered" >
+      <thead>
+        <tr>
+          <th>PHOTO</th>
+          <th>NAME</th>
+          <th>ADM NUMBER</th>
+          <th>AGE</th>
+          <th>GENDER</th>
+          <th>COURSE</th>
+          <th></th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for student in data %}
+          <tr>
+            <td>
+                {% if student.image %}
+                    <img src=" {{ student.image.url }}" alt="{{ student.name}}" style="border-radius: 8px; width: 80px; height: 80px;">
+                {% else  %}
+
+                    <img src="{% static 'images/img_3.png' %}" alt="No image provided" style="border-radius: 8px; width: 80px; height: 80px;">
+                {% endif %}
+
+
+            </td>
+            <td>{{ student.name }}</td>
+            <td> {{ student.admission_number }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.gender }}</td>
+            <td>{{ student.course }}</td>
+            <td><a href="{% url 'edit' student.id %}" class="btn btn-success" type="button">EDIT STUDENT</a></td>
+          </tr>
+
+        {% endfor %}
+      </tbody>
+
+
+    </table>
+
+</div>
+
+{% endblock %}

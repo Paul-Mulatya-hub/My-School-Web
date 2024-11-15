@@ -1,0 +1,45 @@
+#carouselExampleCaptions{
+    margin: 50px 100px 70px 100px;
+    text-align: center;
+
+
+
+}
+
+.carousel-item{
+
+    position: relative;
+    width: 100%;
+    height: 400px;
+
+}
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+
+
+
+}
+
+/*iframe*/
+
+.container {
+    background-color: grey;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+
+
+
+.nav-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+
+

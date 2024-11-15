@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+Edit Student
+
+{% endblock %}
+
+{% block content %}
+<h3>Edit Student</h3>
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-success" type="submit">  UPDATE</button>
+
+    <a href="" class="btn btn-secondary">CANCEL</a>
+
+
+
+</form>
+
+{% endblock %}
